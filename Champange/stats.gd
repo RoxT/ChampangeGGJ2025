@@ -12,8 +12,8 @@ func _on_refresh():
 	add_image(Icons, 0, 0, Color.WHITE, INLINE_ALIGNMENT_CENTER, Rect2(CP.season*32, 0, 32, 32))
 	add_text(CP.Seasons.keys()[CP.season])
 	newline()
-	add_text("$%s" % CP.money)
+	add_text("%s gold coins" % CP.money)
 	newline()
-	add_text("actions left: %s" % CP.actions)
+
 	
 	

@@ -7,7 +7,8 @@ func _ready():
 	$Fields.field_focus.connect(_on_field_focus)
 	CP.field_monk_clicked.connect(_on_field_monk_clicked)
 	CP.refresh.connect(_on_refresh)
-
+	CP.season_ended.connect(_on_season_ended)
+	
 func _on_field_monk_clicked(monk):
 	assert(monk is TextureRect)
 	$HUD/Panel/MonkBox._on_field_monk_clicked(monk)
@@ -27,3 +28,13 @@ func _on_field_clicked(coord, type):
 		
 func _on_refresh():
 	$HUD/Panel2/Stats._on_refresh()
+	
+func _on_season_ended():
+	var working_monks = $FieldMonks.get_children()
+	for monk in working_monks:
+		$Fields.do_work_at(monk.position)
+		monk.reparent($HUD/Panel/MonkBox)
+
+func _unhandled_input(event):
+	if event.is_action_pressed("esc"):
+		get_tree().quit()

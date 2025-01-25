@@ -3,6 +3,14 @@
 [ext_resource type="Texture2D" uid="uid://bigfcnh0ogmss" path="res://monk_temp.png" id="1_hnsob"]
 
 [node name="Monk" type="TextureRect"]
-offset_right = 32.0
-offset_bottom = 35.0
+anchors_preset = -1
+anchor_left = 0.002
+anchor_right = 0.002
+offset_left = -32.28
+offset_top = -19.0
+offset_right = 31.72
+offset_bottom = 16.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
 texture = ExtResource("1_hnsob")
+stretch_mode = 3
