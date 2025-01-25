@@ -3,8 +3,6 @@ extends Node
 signal season_ended
 @warning_ignore("unused_signal")
 signal refresh
-@warning_ignore("unused_signal")
-signal field_monk_clicked(monk)
 
 var money := 10
 enum Seasons {SPRING, SUMMER, FALL, WINTER}

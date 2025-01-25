@@ -5,13 +5,8 @@ extends Node2D
 func _ready():
 	$Fields.field_clicked.connect(_on_field_clicked)
 	$Fields.field_focus.connect(_on_field_focus)
-	CP.field_monk_clicked.connect(_on_field_monk_clicked)
 	CP.refresh.connect(_on_refresh)
 	CP.season_ended.connect(_on_season_ended)
-	
-func _on_field_monk_clicked(monk):
-	assert(monk is TextureRect)
-	$HUD/Panel/MonkBox._on_field_monk_clicked(monk)
 
 func _on_field_focus(coord, type):
 	assert(coord is Vector2i)
@@ -20,20 +15,21 @@ func _on_field_focus(coord, type):
 func _on_field_clicked(coord, type):
 	assert(coord is Vector2i)
 	assert(type is String)
-	if $FieldMonks.monk_focus:
-		$HUD/Panel/MonkBox._on_field_monk_clicked($FieldMonks.monk_focus)
-	else:
-		$HUD/Panel/Info._on_field_clicked(coord, type)
-		$FieldMonks.move_monk_to_field($HUD/Panel/MonkBox.get_monk(), $Fields.map_to_local(coord))
-		
+	if $FieldMonkLayer.remove_monk_at(coord):
+		$HUD/RightP/MonkBox.return_monk_to_box()
+	elif $HUD/RightP/MonkBox.get_monk():
+		$FieldMonkLayer.place_monk_at(coord)
+	$HUD/RightP/Info._on_field_clicked(coord, type)
+
 func _on_refresh():
-	$HUD/Panel2/Stats._on_refresh()
+	$HUD/LeftP/Stats._on_refresh()
 	
 func _on_season_ended():
-	var working_monks = $FieldMonks.get_children()
-	for monk in working_monks:
-		$Fields.do_work_at(monk.position)
-		monk.reparent($HUD/Panel/MonkBox)
+	var working_monks = $FieldMonkLayer.get_used_cells()
+	for monk_coord in working_monks:
+		$Fields.do_work_at(monk_coord)
+		$HUD/RightP/MonkBox.return_monk_to_box()
+	$FieldMonkLayer.clear()
 
 func _unhandled_input(event):
 	if event.is_action_pressed("esc"):

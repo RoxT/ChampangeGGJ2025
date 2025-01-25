@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://c7yb2q4dc0o4v"]
+[gd_scene load_steps=5 format=3 uid="uid://c4i8eaay6tnq8"]
 
 [ext_resource type="Texture2D" uid="uid://g1tm8luxlyd" path="res://RightPanel.png" id="1_4nfj5"]
 [ext_resource type="Script" path="res://info.gd" id="2_g0x2c"]
@@ -24,9 +24,10 @@ anchor_bottom = 1.0
 offset_left = 13.0
 offset_top = 14.0
 offset_right = -20.0
-offset_bottom = -16.0
+offset_bottom = -118.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
 script = ExtResource("2_g0x2c")
 
 [node name="Season" type="Button" parent="."]

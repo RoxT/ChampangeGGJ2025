@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://5idv886wujsk"
-path="res://.godot/imported/monk_mask_temp.png-c73b67e1a206787f1629b6dc3dff07cc.ctex"
+uid="uid://ch1kydxx2rsat"
+path="res://.godot/imported/GoldCoins.png-dd93e4816fda22e97ce147586c692a41.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://monk_mask_temp.png"
-dest_files=["res://.godot/imported/monk_mask_temp.png-c73b67e1a206787f1629b6dc3dff07cc.ctex"]
+source_file="res://GoldCoins.png"
+dest_files=["res://.godot/imported/GoldCoins.png-dd93e4816fda22e97ce147586c692a41.ctex"]
 
 [params]
 

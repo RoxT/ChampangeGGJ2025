@@ -1,21 +1,21 @@
 extends HBoxContainer
 
+const Monk := preload("res://monk.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass
 
-func _on_field_monk_clicked(monk):
-	assert(monk is TextureRect)
-	if monk is TextureRect:
-		monk.reparent(self)
+func return_monk_to_box():
+	add_child(Monk.instantiate())
 
 	
-func get_monk():
+func get_monk()->bool:
 	if get_child_count() > 0:
-		return get_child(0)
+		get_child(0).queue_free()
+		return true
 	else:
-		return null
+		return false
 
 func _on_child_entered_tree(node):
 	if node is TextureRect:

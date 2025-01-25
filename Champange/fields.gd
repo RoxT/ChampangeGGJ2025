@@ -31,8 +31,7 @@ func _unhandled_input(event):
 		field_clicked.emit(coords, type)
 		
 
-func do_work_at(pos:Vector2):
-	var coord = local_to_map(pos)
+func do_work_at(coord:Vector2i):
 	var atlas = get_cell_atlas_coords(coord)
 	match atlas:
 		EMPTY:
