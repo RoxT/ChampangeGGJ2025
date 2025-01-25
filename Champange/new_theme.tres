@@ -1,0 +1,6 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://dgqx7eibwg8ff"]
+
+[ext_resource type="FontFile" uid="uid://cv348v8qkil2" path="res://medieval4.ttf" id="1_6eck1"]
+
+[resource]
+default_font = ExtResource("1_6eck1")

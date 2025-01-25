@@ -5,7 +5,6 @@ const Icons = preload("res://seasons.png")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	CP.refresh.connect(_on_refresh)
 	_on_refresh()
 
 func _on_refresh():

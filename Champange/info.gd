@@ -3,10 +3,10 @@ extends RichTextLabel
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	CP.field_clicked.connect(_on_fields_clicked)
+	pass
 
 
-func _on_fields_clicked(coords:Vector2i, type:String):
+func _on_field_clicked(coords:Vector2i, type:String):
 	clear()
 	add_text("%s" % coords)
 	newline()

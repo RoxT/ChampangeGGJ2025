@@ -1,8 +1,9 @@
 extends Node
 
 @warning_ignore("unused_signal")
-signal field_clicked(coord, type)
 signal refresh()
+@warning_ignore("unused_signal")
+signal field_monk_clicked(monk)
 
 var money := 10
 var actions := 10

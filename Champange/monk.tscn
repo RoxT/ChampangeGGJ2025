@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://blbne31mk7q6j"]
+
+[ext_resource type="Texture2D" uid="uid://bigfcnh0ogmss" path="res://monk_temp.png" id="1_hnsob"]
+
+[node name="Monk" type="TextureRect"]
+offset_right = 32.0
+offset_bottom = 35.0
+texture = ExtResource("1_hnsob")
