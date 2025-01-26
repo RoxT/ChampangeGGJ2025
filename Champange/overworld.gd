@@ -1,5 +1,6 @@
 extends Node2D
 
+const FloatyCask := preload("res://floaty_cask.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -47,6 +48,10 @@ func _on_season_ended():
 	for monk_coord in working_monks:
 		$Fields.do_work_at(monk_coord)
 		if CP.season == CP.Seasons.WINTER:
+			var floaty_cask = FloatyCask.instantiate()
+			floaty_cask.text = "%s" % CP.plants[monk_coord]
+			floaty_cask.position = $Fields.map_to_local(monk_coord) + Vector2(-9, -3)
+			add_child(floaty_cask)
 			$HUD/RightP.add_batch_actions(monk_coord)
 		$HUD/LeftP/MonkBox.return_monk_to_box()
 	$FieldMonkLayer.clear()
@@ -58,9 +63,7 @@ func _on_season_ended():
 		CP.up_keep += 1
 		CP.money -= 15
 	$HUD/Modal.bottles = $HUD/RightP.how_many_bottles()
-	
 	CP.refresh.emit()
-
 
 
 func _unhandled_input(event):

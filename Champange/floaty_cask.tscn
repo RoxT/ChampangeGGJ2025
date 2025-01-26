@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://6cgrk87cb41l"]
+
+[ext_resource type="Script" path="res://floaty.gd" id="1_0y53m"]
+[ext_resource type="Texture2D" uid="uid://cm18nlsmsflk1" path="res://one_cask.png" id="2_b7t7a"]
+
+[node name="FloatyCask" type="Label"]
+offset_right = 22.0
+offset_bottom = 9.0
+text = "12"
+horizontal_alignment = 1
+script = ExtResource("1_0y53m")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+show_behind_parent = true
+layout_mode = 0
+offset_left = -5.0
+offset_top = -17.0
+offset_right = 34.0
+offset_bottom = 22.0
+texture = ExtResource("2_b7t7a")
+expand_mode = 3
+stretch_mode = 2
