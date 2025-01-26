@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://ce7cb4levtq6u"]
+
+[ext_resource type="AudioStream" uid="uid://ievrs5nix7qs" path="res://wine music.ogg" id="1_bsiui"]
+
+[node name="Music" type="AudioStreamPlayer"]
+stream = ExtResource("1_bsiui")
+autoplay = true

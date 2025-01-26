@@ -32,7 +32,7 @@ func do_late_season():
 		CP.Seasons.WINTER:
 			if randf() < 0.20:
 				event = "warm"
-	if event.is_empty() and (CP.money > 25 or bottles > 3) and randf() < 0.9:
+	if event.is_empty() and (CP.money > 25 or bottles > 3) and randf() < 0.1:
 		event = "tax"
 	if event.is_empty():
 		hide()

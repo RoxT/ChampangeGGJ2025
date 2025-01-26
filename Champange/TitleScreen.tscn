@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://byh1isfpu7ubr"]
+[gd_scene load_steps=14 format=3 uid="uid://byh1isfpu7ubr"]
 
 [ext_resource type="Script" path="res://title_screen.gd" id="1_p5nsl"]
 [ext_resource type="Texture2D" uid="uid://idlea1fm7mqr" path="res://FleurDeLys.png" id="1_slpp6"]
@@ -6,6 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://db1q4bmhr5dbj" path="res://MonkDrawing.png" id="3_8igh3"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1oh6g"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_okr0m"]
+bg_color = Color(0.690196, 0.0588235, 0.584314, 1)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_w6rf4"]
 atlas = ExtResource("2_wtip6")
@@ -107,6 +110,7 @@ offset_bottom = 315.0
 theme_override_colors/font_hover_color = Color(0.689614, 0.0590744, 0.586114, 1)
 theme_override_colors/font_pressed_color = Color(0, 0.739715, 0, 1)
 theme_override_font_sizes/font_size = 17
+theme_override_styles/normal = SubResource("StyleBoxFlat_okr0m")
 text = "Play!"
 
 [node name="FleurLeft" type="TextureRect" parent="."]
