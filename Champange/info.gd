@@ -6,12 +6,10 @@ func _ready():
 	pass
 
 
-func _on_field_clicked(coords:Vector2i, type:String):
+func _on_field_focus(coords:Vector2i, type:String):
+	var quality = CP.plants.get(coords, -1)
 	clear()
-	add_text("%s" % coords)
-	newline()
 	add_text("%s" % type)
-
-
-func _on_season_pressed():
-	CP.advance_season()
+	newline()
+	if quality > 0:
+		add_text("Quality: %s" % quality)

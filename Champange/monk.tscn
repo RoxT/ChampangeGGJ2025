@@ -1,16 +1,16 @@
 [gd_scene load_steps=2 format=3 uid="uid://blbne31mk7q6j"]
 
-[ext_resource type="Texture2D" uid="uid://bigfcnh0ogmss" path="res://monk_temp.png" id="1_hnsob"]
+[ext_resource type="Texture2D" uid="uid://52bpv21jk6om" path="res://monk.png" id="1_uw7sl"]
 
 [node name="Monk" type="TextureRect"]
 anchors_preset = -1
 anchor_left = 0.002
 anchor_right = 0.002
-offset_left = -32.28
-offset_top = -19.0
-offset_right = 31.72
-offset_bottom = 16.0
+offset_left = -8.28
+offset_top = -8.0
+offset_right = 7.72
+offset_bottom = 8.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture = ExtResource("1_hnsob")
+texture = ExtResource("1_uw7sl")
 stretch_mode = 3

@@ -1,13 +1,13 @@
 extends HBoxContainer
 
-const Monk := preload("res://monk.tscn")
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass
+	CP.monk_box = self
 
 func return_monk_to_box():
-	add_child(Monk.instantiate())
+	add_child(CP.Monk.instantiate())
 
 	
 func get_monk()->bool:

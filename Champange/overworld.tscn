@@ -1,28 +1,81 @@
-[gd_scene load_steps=12 format=4 uid="uid://b06h2t1k3tbnx"]
+[gd_scene load_steps=16 format=4 uid="uid://b06h2t1k3tbnx"]
 
 [ext_resource type="Script" path="res://overworld.gd" id="1_1dfiy"]
-[ext_resource type="Texture2D" uid="uid://c6m8jpts0lutd" path="res://isometric vineyard tiles.png" id="1_td0l8"]
 [ext_resource type="Script" path="res://fields.gd" id="2_bshk6"]
-[ext_resource type="Texture2D" uid="uid://bigfcnh0ogmss" path="res://monk_temp.png" id="4_rjitj"]
+[ext_resource type="Texture2D" uid="uid://mduri0wnxedk" path="res://isometric vineyard tiles 2.png" id="2_ltmbk"]
+[ext_resource type="Script" path="res://monk_box.gd" id="4_dpi7v"]
+[ext_resource type="Texture2D" uid="uid://n52v7ik4kmtd" path="res://monk_tile.png" id="4_l152c"]
 [ext_resource type="Script" path="res://field_monk_layer.gd" id="4_rv2cw"]
-[ext_resource type="Script" path="res://stats.gd" id="5_qha64"]
+[ext_resource type="PackedScene" uid="uid://blbne31mk7q6j" path="res://monk.tscn" id="5_qw6dk"]
 [ext_resource type="PackedScene" uid="uid://c4i8eaay6tnq8" path="res://RightSidePanel.tscn" id="6_lcqe8"]
+[ext_resource type="Script" path="res://left_panel.gd" id="7_eimlm"]
+[ext_resource type="Texture2D" uid="uid://b0cg4b1of6xtb" path="res://seasons.png" id="9_nl3oc"]
+[ext_resource type="Texture2D" uid="uid://ch1kydxx2rsat" path="res://GoldCoins.png" id="9_uq47a"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6xn64"]
-texture = ExtResource("1_td0l8")
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_i46tr"]
+resource_name = "Spring"
+texture = ExtResource("2_ltmbk")
 texture_region_size = Vector2i(64, 32)
-0:1/0 = 0
-0:1/0/custom_data_0 = "empty"
-1:1/0 = 0
-1:1/0/custom_data_0 = "field"
-2:1/0 = 0
-2:1/0/custom_data_0 = "tilled"
-3:1/0 = 0
-3:1/0/custom_data_0 = "winter"
-4:0/size_in_atlas = Vector2i(1, 2)
-4:0/0 = 0
-4:0/0/texture_origin = Vector2i(0, 16)
-4:0/0/custom_data_0 = "monestary"
+0:0/size_in_atlas = Vector2i(1, 2)
+0:0/0 = 0
+0:0/0/texture_origin = Vector2i(0, 16)
+0:0/0/y_sort_origin = 16
+0:0/0/custom_data_0 = "planted"
+1:0/size_in_atlas = Vector2i(1, 2)
+1:0/0 = 0
+1:0/0/texture_origin = Vector2i(0, 16)
+1:0/0/y_sort_origin = 16
+1:0/0/custom_data_0 = "planted"
+2:0/size_in_atlas = Vector2i(1, 2)
+2:0/0 = 0
+2:0/0/texture_origin = Vector2i(0, 16)
+2:0/0/y_sort_origin = 16
+2:0/0/custom_data_0 = "planted"
+3:0/size_in_atlas = Vector2i(1, 2)
+3:0/0 = 0
+3:0/0/texture_origin = Vector2i(0, 16)
+3:0/0/y_sort_origin = 16
+3:0/0/custom_data_0 = "planted"
+0:2/size_in_atlas = Vector2i(1, 2)
+0:2/0 = 0
+0:2/0/texture_origin = Vector2i(0, 16)
+0:2/0/y_sort_origin = 16
+0:2/0/custom_data_0 = "empty"
+1:2/size_in_atlas = Vector2i(1, 2)
+1:2/0 = 0
+1:2/0/texture_origin = Vector2i(0, 16)
+1:2/0/y_sort_origin = 16
+1:2/0/custom_data_0 = "empty"
+2:2/size_in_atlas = Vector2i(1, 2)
+2:2/0 = 0
+2:2/0/texture_origin = Vector2i(0, 16)
+2:2/0/y_sort_origin = 16
+2:2/0/custom_data_0 = "empty"
+3:2/size_in_atlas = Vector2i(1, 2)
+3:2/0 = 0
+3:2/0/texture_origin = Vector2i(0, 16)
+3:2/0/y_sort_origin = 16
+3:2/0/custom_data_0 = "empty"
+0:4/size_in_atlas = Vector2i(1, 2)
+0:4/0 = 0
+0:4/0/texture_origin = Vector2i(0, 16)
+0:4/0/y_sort_origin = 16
+0:4/0/custom_data_0 = "house"
+1:4/size_in_atlas = Vector2i(1, 2)
+1:4/0 = 0
+1:4/0/texture_origin = Vector2i(0, 16)
+1:4/0/y_sort_origin = 16
+1:4/0/custom_data_0 = "house"
+2:4/size_in_atlas = Vector2i(1, 2)
+2:4/0 = 0
+2:4/0/texture_origin = Vector2i(0, 16)
+2:4/0/y_sort_origin = 16
+2:4/0/custom_data_0 = "house"
+3:4/size_in_atlas = Vector2i(1, 2)
+3:4/0 = 0
+3:4/0/texture_origin = Vector2i(0, 16)
+3:4/0/y_sort_origin = 16
+3:4/0/custom_data_0 = "house"
 
 [sub_resource type="TileSet" id="TileSet_o5v2o"]
 tile_shape = 1
@@ -30,26 +83,25 @@ tile_layout = 4
 tile_size = Vector2i(64, 32)
 custom_data_layer_0/name = "type"
 custom_data_layer_0/type = 4
-sources/0 = SubResource("TileSetAtlasSource_6xn64")
+sources/0 = SubResource("TileSetAtlasSource_i46tr")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wxmww"]
-texture = ExtResource("4_rjitj")
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_f1hwt"]
+texture = ExtResource("4_l152c")
 texture_region_size = Vector2i(64, 32)
 0:0/0 = 0
-0:0/0/texture_origin = Vector2i(0, 16)
 
 [sub_resource type="TileSet" id="TileSet_cjtgk"]
 tile_shape = 1
 tile_layout = 4
 tile_size = Vector2i(64, 32)
-sources/0 = SubResource("TileSetAtlasSource_wxmww")
+sources/0 = SubResource("TileSetAtlasSource_f1hwt")
 
 [node name="Overworld" type="Node2D"]
 script = ExtResource("1_1dfiy")
 
 [node name="Fields" type="TileMapLayer" parent="."]
 y_sort_enabled = true
-tile_map_data = PackedByteArray("AAAEAAQAAAAAAAEAAAADAAMAAAAAAAEAAAACAAIAAAAAAAEAAAABAAEAAAAAAAEAAAAAAAEAAAAAAAEAAAABAAIAAAAAAAEAAAABAAMAAAAAAAEAAAACAAMAAAAAAAEAAAADAAQAAAAEAAAAAAAAAAIAAAABAAEAAAD//wEAAAAAAAEAAAD//wIAAAABAAEAAAACAAQAAAAAAAEAAAACAAUAAAAAAAEAAAABAAQAAAAAAAEAAAAAAAMAAAACAAEAAAD+/wMAAAAAAAEAAAD//wMAAAACAAEAAAAAAAQAAAAAAAEAAAABAAUAAAAAAAEAAAAAAAUAAAACAAEAAAD+/wIAAAAAAAEAAAD//wQAAAAAAAEAAAAAAAYAAAABAAEAAAAAAAcAAAABAAEAAAABAAcAAAAAAAEAAAD//wUAAAAAAAEAAAD+/wQAAAAAAAEAAAD9/wMAAAAAAAEAAAABAAYAAAAAAAEAAAD9/wUAAAAAAAEAAAD+/wYAAAABAAEAAAD//wYAAAABAAEAAAD+/wUAAAAAAAEAAAD9/wQAAAAAAAEAAAD//wcAAAABAAEAAAD8/wYAAAAAAAEAAAD9/wcAAAABAAEAAAD+/wgAAAAAAAEAAAD+/wkAAAAAAAEAAAD9/wgAAAAAAAEAAAD7/wYAAAAAAAEAAAD9/wYAAAAAAAEAAAD+/wcAAAABAAEAAAD//wgAAAAAAAEAAAD8/wQAAAAAAAEAAAD8/wMAAAAAAAEAAAD8/wUAAAAAAAEAAAD7/wUAAAAAAAEAAAD6/wUAAAAAAAEAAAD6/wYAAAAAAAEAAAD8/wcAAAAAAAEAAAD//wkAAAAAAAEAAAD//woAAAAAAAEAAAAAAAkAAAAAAAEAAAAAAAgAAAAAAAEAAAABAAgAAAAAAAEAAAACAAcAAAAAAAEAAAACAAYAAAAAAAEAAAADAAYAAAAAAAEAAAADAAUAAAAAAAEAAAAEAAUAAAAAAAEAAAD+/wsAAAAAAAEAAAD+/woAAAAAAAEAAAD9/woAAAAAAAEAAAD9/wkAAAAAAAEAAAD8/wkAAAAAAAEAAAD8/wgAAAAAAAEAAAD7/wgAAAAAAAEAAAD7/wcAAAAAAAEAAAD6/wcAAAAAAAEAAAD5/wcAAAAAAAEAAAD5/wgAAAAAAAEAAAD5/wkAAAAAAAEAAAD6/wkAAAAAAAEAAAD6/woAAAAAAAEAAAD7/woAAAAAAAEAAAD7/wsAAAAAAAEAAAD8/wwAAAAAAAEAAAD9/w0AAAAAAAEAAAD8/wsAAAAAAAEAAAD8/woAAAAAAAEAAAD7/wkAAAAAAAEAAAD6/wgAAAAAAAEAAAD9/wsAAAAAAAEAAAD9/wwAAAAAAAEAAAD4/wgAAAAAAAEAAAA=")
+tile_map_data = PackedByteArray("AAADAAQAAAAAAAQAAAAAAAUAAAAAAAIAAAABAAUAAAAAAAIAAAACAAUAAAAAAAIAAAADAAUAAAAAAAIAAAAEAAUAAAAAAAIAAAAEAAQAAAAAAAIAAAADAAYAAAAAAAIAAAACAAYAAAAAAAIAAAABAAYAAAAAAAIAAAAAAAYAAAAAAAIAAAD//wYAAAAAAAIAAAD//wUAAAAAAAIAAAD//wQAAAAAAAIAAAAAAAQAAAAAAAIAAAABAAQAAAAAAAIAAAACAAQAAAAAAAIAAAACAAMAAAAAAAIAAAADAAMAAAAAAAIAAAACAAIAAAAAAAIAAAABAAIAAAAAAAIAAAABAAEAAAAAAAIAAAAAAAEAAAAAAAIAAAD//wEAAAAAAAIAAAD//wIAAAAAAAIAAAAAAAIAAAAAAAIAAAAAAAMAAAAAAAIAAAABAAMAAAAAAAIAAAD//wMAAAAAAAIAAAD+/wMAAAAAAAIAAAD+/wIAAAAAAAIAAAD9/wMAAAAAAAIAAAD8/wMAAAAAAAIAAAD8/wQAAAAAAAIAAAD9/wQAAAAAAAIAAAD+/wQAAAAAAAIAAAD+/wUAAAAAAAIAAAD9/wUAAAAAAAIAAAD8/wUAAAAAAAIAAAD7/wUAAAAAAAIAAAD6/wUAAAAAAAIAAAD6/wYAAAAAAAIAAAD7/wYAAAAAAAIAAAD8/wYAAAAAAAIAAAD9/wYAAAAAAAIAAAD+/wYAAAAAAAIAAAD+/wcAAAAAAAIAAAD//wcAAAAAAAIAAAAAAAcAAAAAAAIAAAABAAcAAAAAAAIAAAACAAcAAAAAAAIAAAABAAgAAAAAAAIAAAAAAAgAAAAAAAIAAAD//wgAAAAAAAIAAAD+/wgAAAAAAAIAAAD9/wgAAAAAAAIAAAD9/wcAAAAAAAIAAAD8/wcAAAAAAAIAAAD7/wcAAAAAAAIAAAD6/wcAAAAAAAIAAAD5/wcAAAAAAAIAAAD5/wgAAAAAAAIAAAD6/wgAAAAAAAIAAAD7/wgAAAAAAAIAAAD8/wgAAAAAAAIAAAD8/wkAAAAAAAIAAAD9/wkAAAAAAAIAAAD+/wkAAAAAAAIAAAD//wkAAAAAAAIAAAAAAAkAAAAAAAIAAAD//woAAAAAAAIAAAD+/woAAAAAAAIAAAD9/woAAAAAAAIAAAD8/woAAAAAAAIAAAD7/woAAAAAAAIAAAD7/wkAAAAAAAIAAAD6/wkAAAAAAAIAAAD5/wkAAAAAAAIAAAD6/woAAAAAAAIAAAD7/wsAAAAAAAIAAAD8/wsAAAAAAAIAAAD9/wsAAAAAAAIAAAD+/wsAAAAAAAIAAAD9/wwAAAAAAAIAAAD8/wwAAAAAAAIAAAD9/w0AAAAAAAIAAAD4/wgAAAAAAAIAAAA=")
 tile_set = SubResource("TileSet_o5v2o")
 script = ExtResource("2_bshk6")
 
@@ -66,6 +118,7 @@ offset_left = 6.0
 offset_top = 296.0
 offset_right = 638.0
 offset_bottom = 360.0
+script = ExtResource("7_eimlm")
 
 [node name="Stats" type="RichTextLabel" parent="HUD/LeftP"]
 layout_mode = 1
@@ -75,4 +128,83 @@ anchor_bottom = 1.0
 offset_left = 9.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("5_qha64")
+
+[node name="SeasonIcon" type="Sprite2D" parent="HUD/LeftP"]
+position = Vector2(539, 23)
+texture = ExtResource("9_nl3oc")
+hframes = 4
+
+[node name="SeasonLabel" type="Label" parent="HUD/LeftP"]
+layout_mode = 0
+offset_left = 522.0
+offset_top = 41.0
+offset_right = 562.0
+offset_bottom = 62.0
+text = "Summer
+Year 3"
+horizontal_alignment = 1
+
+[node name="CoinsIcon" type="TextureRect" parent="HUD/LeftP"]
+layout_mode = 0
+offset_right = 64.0
+offset_bottom = 64.0
+texture = ExtResource("9_uq47a")
+
+[node name="CoinsLabel" type="Label" parent="HUD/LeftP"]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 19.0
+offset_right = 104.0
+offset_bottom = 52.0
+text = "3 coins"
+autowrap_mode = 1
+
+[node name="MonkBox" type="HBoxContainer" parent="HUD/LeftP"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 104.0
+offset_top = -45.0
+offset_right = 104.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 0
+script = ExtResource("4_dpi7v")
+metadata/_edit_group_ = true
+
+[node name="Monk" parent="HUD/LeftP/MonkBox" instance=ExtResource("5_qw6dk")]
+layout_mode = 2
+
+[node name="Season" type="Button" parent="HUD/LeftP"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 570.0
+offset_top = -57.0
+offset_right = -5.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Next Season"
+autowrap_mode = 3
+
+[node name="HelpPanel" type="Panel" parent="HUD"]
+visible = false
+offset_left = 6.0
+offset_top = 256.0
+offset_right = 343.0
+offset_bottom = 287.0
+
+[node name="Label" type="Label" parent="HUD/HelpPanel"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 9.0
+text = "Click Empty tile to have monk plant for next season."
+
+[connection signal="child_entered_tree" from="HUD/LeftP/MonkBox" to="HUD/LeftP/MonkBox" method="_on_child_entered_tree"]
+[connection signal="child_exiting_tree" from="HUD/LeftP/MonkBox" to="HUD/LeftP/MonkBox" method="_on_child_exiting_tree"]
+[connection signal="pressed" from="HUD/LeftP/Season" to="HUD/LeftP" method="_on_season_pressed"]

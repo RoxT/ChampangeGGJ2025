@@ -1,11 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://c4i8eaay6tnq8"]
+[gd_scene load_steps=4 format=3 uid="uid://c4i8eaay6tnq8"]
 
 [ext_resource type="Texture2D" uid="uid://g1tm8luxlyd" path="res://RightPanel.png" id="1_4nfj5"]
 [ext_resource type="Script" path="res://info.gd" id="2_g0x2c"]
-[ext_resource type="Script" path="res://monk_box.gd" id="3_yy4hc"]
-[ext_resource type="PackedScene" uid="uid://blbne31mk7q6j" path="res://monk.tscn" id="4_hxhwv"]
+[ext_resource type="Script" path="res://right_side_panel.gd" id="2_u3afn"]
 
-[node name="NinePatchRect" type="NinePatchRect"]
+[node name="RightP" type="NinePatchRect"]
 offset_left = 351.0
 offset_top = 3.0
 offset_right = 634.0
@@ -15,58 +14,40 @@ patch_margin_left = 32
 patch_margin_top = 32
 patch_margin_right = 32
 patch_margin_bottom = 32
+script = ExtResource("2_u3afn")
 
 [node name="Info" type="RichTextLabel" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 13.0
-offset_top = 14.0
-offset_right = -20.0
-offset_bottom = -118.0
+offset_left = 36.0
+offset_top = 19.0
+offset_right = -19.0
+offset_bottom = -234.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 script = ExtResource("2_g0x2c")
 
-[node name="Season" type="Button" parent="."]
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 67.0
+offset_right = 267.0
+offset_bottom = 259.0
+
+[node name="HelpLabel" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 26.0
-offset_top = -62.0
-offset_right = -140.0
-offset_bottom = -31.0
+offset_left = 17.0
+offset_top = -71.0
+offset_right = -17.0
+offset_bottom = -17.0
 grow_horizontal = 2
 grow_vertical = 0
-text = "Next Season"
-
-[node name="MonkBox" type="HBoxContainer" parent="."]
-layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 26.0
-offset_top = -110.0
-offset_right = 26.0
-offset_bottom = -75.0
-grow_horizontal = 2
-grow_vertical = 0
-script = ExtResource("3_yy4hc")
-
-[node name="Monk" parent="MonkBox" instance=ExtResource("4_hxhwv")]
-layout_mode = 2
-
-[node name="Monk2" parent="MonkBox" instance=ExtResource("4_hxhwv")]
-layout_mode = 2
-
-[node name="Monk3" parent="MonkBox" instance=ExtResource("4_hxhwv")]
-layout_mode = 2
-
-[connection signal="pressed" from="Season" to="Info" method="_on_season_pressed"]
-[connection signal="child_entered_tree" from="MonkBox" to="MonkBox" method="_on_child_entered_tree"]
-[connection signal="child_exiting_tree" from="MonkBox" to="MonkBox" method="_on_child_exiting_tree"]
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+autowrap_mode = 3

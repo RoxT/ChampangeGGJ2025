@@ -1,0 +1,11 @@
+,en
+SPRING_YEAR1,"Click any empty field tile to have your monk plant grapevines.\n\nThen click Next Season."
+SUMMER_YEAR1,"Click the vines you planted to have your monk tend to them. This protects the vines and improves the wine they will produce.\n\nThen click Next Season."
+FALL_YEAR1,"Click the vines again to have your monk harvest them.\n\nThen click Next Season."
+WINTER_YEAR1,"The wine is fermenting, and your monk is resting for the winter.\n\nClick Next Season."
+SPRING_YEAR2,"A new monk has joined your monastery!\n\nYour monks can now bottle the wine you fermented over the winter. It’s best to do this as soon as you can.\n\nYour monks can also plant new vines, or they can prune existing vines, which improves the wine they will produce.\n\nWhen both monks have tasks, click Next Season."
+SUMMER_YEAR2,"In the summer, you can tend to your vines.\n\nIf you have bottled your wine, you can riddle it now. This removes the sediment and improves the wine’s quality.\n\nWhen your monks have tasks, click Next Season."
+FALL_YEAR2,"It’s time to harvest again!\n\nWhen your monks have tasks, click Next Season."
+WINTER_YEAR2,"Your monks are resting for the winter.\n\nClick Next Season."
+SPRING_YEAR3,"Another new monk has joined your monastery! Your monastery is now at capacity.\n\n
+You can start selling your wines to make money, which you can use to pay for your expenses and build more monasteries. The wine’s value will increase the longer it’s aged before you sell it.\n\nGood luck!"

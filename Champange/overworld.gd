@@ -11,25 +11,49 @@ func _ready():
 func _on_field_focus(coord, type):
 	assert(coord is Vector2i)
 	assert(type is String)
+	$HUD/RightP/Info._on_field_focus(coord, type)
 
 func _on_field_clicked(coord, type):
 	assert(coord is Vector2i)
 	assert(type is String)
 	if $FieldMonkLayer.remove_monk_at(coord):
-		$HUD/RightP/MonkBox.return_monk_to_box()
-	elif $HUD/RightP/MonkBox.get_monk():
-		$FieldMonkLayer.place_monk_at(coord)
-	$HUD/RightP/Info._on_field_clicked(coord, type)
+		$HUD/LeftP/MonkBox.return_monk_to_box()
+	else:
+		match CP.season:
+			CP.Seasons.SPRING:
+				match type:
+					"planted", "empty":
+						if $HUD/LeftP/MonkBox.get_monk():
+							$FieldMonkLayer.place_monk_at(coord)
+			CP.Seasons.SUMMER:
+				match type:
+					"planted":
+						if $HUD/LeftP/MonkBox.get_monk():
+							$FieldMonkLayer.place_monk_at(coord)
+			CP.Seasons.FALL:
+				match type:
+					"planted":
+						if $HUD/LeftP/MonkBox.get_monk():
+							$FieldMonkLayer.place_monk_at(coord)
+					
+	
 
 func _on_refresh():
-	$HUD/LeftP/Stats._on_refresh()
+	$HUD/LeftP._on_refresh.call_deferred()
 	
 func _on_season_ended():
 	var working_monks = $FieldMonkLayer.get_used_cells()
 	for monk_coord in working_monks:
 		$Fields.do_work_at(monk_coord)
-		$HUD/RightP/MonkBox.return_monk_to_box()
+		if CP.season == CP.Seasons.WINTER:
+			$HUD/RightP.add_batch_actions(monk_coord)
+		$HUD/LeftP/MonkBox.return_monk_to_box()
 	$FieldMonkLayer.clear()
+	if CP.season == CP.Seasons.SPRING:
+		for plant_coord in CP.plants.keys():
+			CP.plants[plant_coord] = 5
+	CP.refresh.emit()
+
 
 func _unhandled_input(event):
 	if event.is_action_pressed("esc"):

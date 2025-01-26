@@ -45,6 +45,10 @@ esc={
 ]
 }
 
+[internationalization]
+
+locale/translations=PackedStringArray("res://help_text.en.translation")
+
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
