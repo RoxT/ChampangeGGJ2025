@@ -24,17 +24,17 @@ func _on_field_clicked(coord, type):
 				match type:
 					"planted", "empty":
 						if $HUD/LeftP/MonkBox.get_monk():
-							$FieldMonkLayer.place_monk_at(coord)
+							$FieldMonkLayer.place_monk_at(coord, type)
 			CP.Seasons.SUMMER:
 				match type:
 					"planted":
 						if $HUD/LeftP/MonkBox.get_monk():
-							$FieldMonkLayer.place_monk_at(coord)
+							$FieldMonkLayer.place_monk_at(coord, type)
 			CP.Seasons.FALL:
 				match type:
 					"planted":
 						if $HUD/LeftP/MonkBox.get_monk():
-							$FieldMonkLayer.place_monk_at(coord)
+							$FieldMonkLayer.place_monk_at(coord, type)
 					
 	
 
@@ -52,6 +52,9 @@ func _on_season_ended():
 	if CP.season == CP.Seasons.SPRING:
 		for plant_coord in CP.plants.keys():
 			CP.plants[plant_coord] = 5
+	if $HUD/LeftP.get_builder():
+		$Fields.new_house()
+		CP.money -= 15
 	CP.refresh.emit()
 
 

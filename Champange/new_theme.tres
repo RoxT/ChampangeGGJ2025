@@ -1,7 +1,13 @@
-[gd_resource type="Theme" load_steps=2 format=3 uid="uid://dgqx7eibwg8ff"]
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://dgqx7eibwg8ff"]
 
 [ext_resource type="FontFile" uid="uid://cv348v8qkil2" path="res://medieval4.ttf" id="1_6eck1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q4ky4"]
+bg_color = Color(0.780392, 0.6, 0.0980392, 1)
 
 [resource]
 default_font = ExtResource("1_6eck1")
 default_font_size = 8
+full/base_type = &"Button"
+full/colors/font_color = Color(0, 0, 0, 1)
+full/styles/normal = SubResource("StyleBoxFlat_q4ky4")

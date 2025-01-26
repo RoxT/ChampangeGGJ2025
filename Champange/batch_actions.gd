@@ -68,6 +68,8 @@ func move_monk_to(button:Button):
 		if CP.monk_box.get_monk():
 			monk = CP.Monk.instantiate()
 			button.add_child(monk)
+			if button == button_2:
+				$AnimatedSprite2D/LabelSprite.show()
 		else:
 			button.set_pressed_no_signal(false)
 	
@@ -88,9 +90,8 @@ func _return_monk():
 		monk = null
 
 func _on_button_2_toggled(toggled_on):
+	$AnimatedSprite2D/LabelSprite.hide()
 	if toggled_on:
-		$AnimatedSprite2D/LabelSprite.show()
 		move_monk_to(button_2)
 	else:
-		$AnimatedSprite2D/LabelSprite.hide()
 		_return_monk()

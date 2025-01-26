@@ -19,9 +19,16 @@ func _on_season_ended():
 	for cell in get_used_cells():
 		var y = get_cell_atlas_coords(cell).y
 		set_cell(cell, 0, atlas(y))
+	late_season_ended.call_deferred()
+
+func late_season_ended():
 	var capacity = get_used_cells_by_id(0, atlas(HOUSE)).size() * 3
 	if CP.monk_box.get_child_count() < capacity and CP.season == CP.Seasons.SPRING:
 		CP.monk_box.return_monk_to_box()
+
+func new_house():
+	var new_coord = get_used_cells_by_id(0, atlas(EMPTY)).pick_random()
+	set_cell(new_coord, 0, atlas(HOUSE))
 	
 
 func _unhandled_input(event):

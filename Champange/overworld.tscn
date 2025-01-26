@@ -60,22 +60,22 @@ texture_region_size = Vector2i(64, 32)
 0:4/0 = 0
 0:4/0/texture_origin = Vector2i(0, 16)
 0:4/0/y_sort_origin = 16
-0:4/0/custom_data_0 = "house"
+0:4/0/custom_data_0 = "monestary"
 1:4/size_in_atlas = Vector2i(1, 2)
 1:4/0 = 0
 1:4/0/texture_origin = Vector2i(0, 16)
 1:4/0/y_sort_origin = 16
-1:4/0/custom_data_0 = "house"
+1:4/0/custom_data_0 = "monestary"
 2:4/size_in_atlas = Vector2i(1, 2)
 2:4/0 = 0
 2:4/0/texture_origin = Vector2i(0, 16)
 2:4/0/y_sort_origin = 16
-2:4/0/custom_data_0 = "house"
+2:4/0/custom_data_0 = "monestary"
 3:4/size_in_atlas = Vector2i(1, 2)
 3:4/0 = 0
 3:4/0/texture_origin = Vector2i(0, 16)
 3:4/0/y_sort_origin = 16
-3:4/0/custom_data_0 = "house"
+3:4/0/custom_data_0 = "monestary"
 
 [sub_resource type="TileSet" id="TileSet_o5v2o"]
 tile_shape = 1
@@ -101,7 +101,7 @@ script = ExtResource("1_1dfiy")
 
 [node name="Fields" type="TileMapLayer" parent="."]
 y_sort_enabled = true
-tile_map_data = PackedByteArray("AAADAAQAAAAAAAQAAAAAAAUAAAAAAAIAAAABAAUAAAAAAAIAAAACAAUAAAAAAAIAAAADAAUAAAAAAAIAAAAEAAUAAAAAAAIAAAAEAAQAAAAAAAIAAAADAAYAAAAAAAIAAAACAAYAAAAAAAIAAAABAAYAAAAAAAIAAAAAAAYAAAAAAAIAAAD//wYAAAAAAAIAAAD//wUAAAAAAAIAAAD//wQAAAAAAAIAAAAAAAQAAAAAAAIAAAABAAQAAAAAAAIAAAACAAQAAAAAAAIAAAACAAMAAAAAAAIAAAADAAMAAAAAAAIAAAACAAIAAAAAAAIAAAABAAIAAAAAAAIAAAABAAEAAAAAAAIAAAAAAAEAAAAAAAIAAAD//wEAAAAAAAIAAAD//wIAAAAAAAIAAAAAAAIAAAAAAAIAAAAAAAMAAAAAAAIAAAABAAMAAAAAAAIAAAD//wMAAAAAAAIAAAD+/wMAAAAAAAIAAAD+/wIAAAAAAAIAAAD9/wMAAAAAAAIAAAD8/wMAAAAAAAIAAAD8/wQAAAAAAAIAAAD9/wQAAAAAAAIAAAD+/wQAAAAAAAIAAAD+/wUAAAAAAAIAAAD9/wUAAAAAAAIAAAD8/wUAAAAAAAIAAAD7/wUAAAAAAAIAAAD6/wUAAAAAAAIAAAD6/wYAAAAAAAIAAAD7/wYAAAAAAAIAAAD8/wYAAAAAAAIAAAD9/wYAAAAAAAIAAAD+/wYAAAAAAAIAAAD+/wcAAAAAAAIAAAD//wcAAAAAAAIAAAAAAAcAAAAAAAIAAAABAAcAAAAAAAIAAAACAAcAAAAAAAIAAAABAAgAAAAAAAIAAAAAAAgAAAAAAAIAAAD//wgAAAAAAAIAAAD+/wgAAAAAAAIAAAD9/wgAAAAAAAIAAAD9/wcAAAAAAAIAAAD8/wcAAAAAAAIAAAD7/wcAAAAAAAIAAAD6/wcAAAAAAAIAAAD5/wcAAAAAAAIAAAD5/wgAAAAAAAIAAAD6/wgAAAAAAAIAAAD7/wgAAAAAAAIAAAD8/wgAAAAAAAIAAAD8/wkAAAAAAAIAAAD9/wkAAAAAAAIAAAD+/wkAAAAAAAIAAAD//wkAAAAAAAIAAAAAAAkAAAAAAAIAAAD//woAAAAAAAIAAAD+/woAAAAAAAIAAAD9/woAAAAAAAIAAAD8/woAAAAAAAIAAAD7/woAAAAAAAIAAAD7/wkAAAAAAAIAAAD6/wkAAAAAAAIAAAD5/wkAAAAAAAIAAAD6/woAAAAAAAIAAAD7/wsAAAAAAAIAAAD8/wsAAAAAAAIAAAD9/wsAAAAAAAIAAAD+/wsAAAAAAAIAAAD9/wwAAAAAAAIAAAD8/wwAAAAAAAIAAAD9/w0AAAAAAAIAAAD4/wgAAAAAAAIAAAA=")
+tile_map_data = PackedByteArray("AAADAAQAAAAAAAQAAAAAAAUAAAAAAAIAAAABAAUAAAAAAAIAAAACAAUAAAAAAAIAAAADAAUAAAAAAAIAAAAEAAUAAAAAAAIAAAAEAAQAAAAAAAIAAAADAAYAAAAAAAIAAAACAAYAAAAAAAIAAAABAAYAAAAAAAIAAAAAAAYAAAAAAAIAAAD//wYAAAAAAAIAAAD//wUAAAAAAAIAAAD//wQAAAAAAAIAAAAAAAQAAAAAAAIAAAABAAQAAAAAAAIAAAACAAQAAAAAAAIAAAACAAMAAAAAAAIAAAADAAMAAAAAAAIAAAACAAIAAAAAAAIAAAABAAIAAAAAAAIAAAABAAEAAAAAAAIAAAAAAAEAAAAAAAIAAAD//wEAAAAAAAIAAAD//wIAAAAAAAIAAAAAAAIAAAAAAAIAAAAAAAMAAAAAAAIAAAABAAMAAAAAAAIAAAD//wMAAAAAAAIAAAD+/wMAAAAAAAIAAAD+/wIAAAAAAAIAAAD9/wMAAAAAAAIAAAD8/wQAAAAAAAIAAAD9/wQAAAAAAAIAAAD+/wQAAAAAAAIAAAD+/wUAAAAAAAIAAAD9/wUAAAAAAAIAAAD8/wUAAAAAAAIAAAD7/wUAAAAAAAIAAAD6/wYAAAAAAAIAAAD7/wYAAAAAAAIAAAD8/wYAAAAAAAIAAAD9/wYAAAAAAAIAAAD+/wYAAAAAAAIAAAD+/wcAAAAAAAIAAAD//wcAAAAAAAIAAAAAAAcAAAAAAAIAAAABAAcAAAAAAAIAAAACAAcAAAAAAAIAAAABAAgAAAAAAAIAAAAAAAgAAAAAAAIAAAD//wgAAAAAAAIAAAD+/wgAAAAAAAIAAAD9/wgAAAAAAAIAAAD9/wcAAAAAAAIAAAD8/wcAAAAAAAIAAAD7/wcAAAAAAAIAAAD6/wcAAAAAAAIAAAD5/wcAAAAAAAIAAAD6/wgAAAAAAAIAAAD7/wgAAAAAAAIAAAD8/wgAAAAAAAIAAAD8/wkAAAAAAAIAAAD9/wkAAAAAAAIAAAD+/wkAAAAAAAIAAAD//wkAAAAAAAIAAAAAAAkAAAAAAAIAAAD//woAAAAAAAIAAAD+/woAAAAAAAIAAAD9/woAAAAAAAIAAAD8/woAAAAAAAIAAAD7/wkAAAAAAAIAAAD9/wsAAAAAAAIAAAD+/wsAAAAAAAIAAAAAAAAAAAAAAAIAAAA=")
 tile_set = SubResource("TileSet_o5v2o")
 script = ExtResource("2_bshk6")
 
@@ -167,7 +167,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 104.0
 offset_top = -45.0
-offset_right = 104.0
+offset_right = -125.0
 offset_bottom = -10.0
 grow_horizontal = 2
 grow_vertical = 0
@@ -183,7 +183,7 @@ anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 570.0
+offset_left = 573.0
 offset_top = -57.0
 offset_right = -5.0
 offset_bottom = -10.0
@@ -191,6 +191,23 @@ grow_horizontal = 2
 grow_vertical = 0
 text = "Next Season"
 autowrap_mode = 3
+
+[node name="BuildPanel" type="Panel" parent="HUD/LeftP"]
+layout_mode = 0
+offset_top = -31.0
+offset_right = 137.0
+
+[node name="BuildBtn" type="Button" parent="HUD/LeftP/BuildPanel"]
+layout_mode = 0
+offset_left = 33.0
+offset_top = 8.0
+offset_right = 112.0
+offset_bottom = 25.0
+toggle_mode = true
+text = "Build Monestary (15)"
+
+[node name="SeasonTimer" type="Timer" parent="HUD/LeftP"]
+one_shot = true
 
 [node name="HelpPanel" type="Panel" parent="HUD"]
 visible = false
@@ -205,6 +222,8 @@ offset_right = 40.0
 offset_bottom = 9.0
 text = "Click Empty tile to have monk plant for next season."
 
+[connection signal="changed_monk" from="HUD/LeftP/MonkBox" to="HUD/LeftP" method="_on_monk_box_changed_monk"]
 [connection signal="child_entered_tree" from="HUD/LeftP/MonkBox" to="HUD/LeftP/MonkBox" method="_on_child_entered_tree"]
 [connection signal="child_exiting_tree" from="HUD/LeftP/MonkBox" to="HUD/LeftP/MonkBox" method="_on_child_exiting_tree"]
 [connection signal="pressed" from="HUD/LeftP/Season" to="HUD/LeftP" method="_on_season_pressed"]
+[connection signal="toggled" from="HUD/LeftP/BuildPanel/BuildBtn" to="HUD/LeftP" method="_on_build_btn_toggled"]

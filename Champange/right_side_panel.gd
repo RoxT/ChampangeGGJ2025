@@ -10,8 +10,9 @@ func _ready():
 
 func add_batch_actions(coord:Vector2i):
 	var new_batch = BatchActions.instantiate()
-	vbox.add_child(new_batch)
 	new_batch.quality = CP.plants[coord]
+	vbox.add_child(new_batch)
+	CP.plants.erase(coord)
 	
 func _on_season_ended():
 	var key = "%s_YEAR%s" % [CP.Seasons.keys()[CP.season].to_upper(), CP.year]

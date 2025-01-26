@@ -8,7 +8,7 @@ signal refresh
 @warning_ignore("unused_signal")
 var monk_box
 
-var money := 10
+var money := 17
 enum Seasons {SPRING, SUMMER, FALL, WINTER}
 var season := 0
 var year := 1

@@ -1,6 +1,7 @@
 extends HBoxContainer
 
 
+signal changed_monk(all_busy)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -20,6 +21,7 @@ func get_monk()->bool:
 func _on_child_entered_tree(node):
 	if node is TextureRect:
 		node.connect("gui_input", _on_monk_gui_input)
+	do_changed_monk.call_deferred()
 
 func _on_monk_gui_input(_event:InputEvent):
 	pass
@@ -27,3 +29,7 @@ func _on_monk_gui_input(_event:InputEvent):
 func _on_child_exiting_tree(node):
 	if node is TextureRect:
 		node.disconnect("gui_input", _on_monk_gui_input)
+	do_changed_monk.call_deferred()
+		
+func do_changed_monk():
+	changed_monk.emit(get_child_count() == 0)

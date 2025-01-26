@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://6646viw11s3w"]
+
+[ext_resource type="Script" path="res://floaty.gd" id="1_hsd5l"]
+[ext_resource type="Texture2D" uid="uid://dbqkqh5mf8hyh" path="res://ThoughtBubble.png" id="2_vocpl"]
+
+[node name="Floaty" type="Label"]
+offset_right = 46.0
+offset_bottom = 9.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "harvesting"
+horizontal_alignment = 1
+script = ExtResource("1_hsd5l")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+show_behind_parent = true
+layout_mode = 0
+offset_left = -5.0
+offset_top = -8.0
+offset_right = 51.0
+offset_bottom = 32.0
+texture = ExtResource("2_vocpl")

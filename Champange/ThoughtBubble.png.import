@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://crx3s7a3f6ab5"
-path="res://.godot/imported/monk_temp_tile.png-febfabed422ad524414ba081924099c2.ctex"
+uid="uid://dbqkqh5mf8hyh"
+path="res://.godot/imported/ThoughtBubble.png-029d6e282b7c8a1002920003541c0620.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://monk_temp_tile.png"
-dest_files=["res://.godot/imported/monk_temp_tile.png-febfabed422ad524414ba081924099c2.ctex"]
+source_file="res://ThoughtBubble.png"
+dest_files=["res://.godot/imported/ThoughtBubble.png-029d6e282b7c8a1002920003541c0620.ctex"]
 
 [params]
 
