@@ -12,19 +12,21 @@ func _on_season_ended():
 	do_late_season.call_deferred()
 	
 func do_late_season():
+	if CP.year < 3: return
 	var event = ""
 	match CP.season:
 		CP.Seasons.SPRING:
 			pass
 		CP.Seasons.SUMMER:
 			if randf() < 0.5:
-				event = ["drought", "festival", "rains", "pests"].pick_random()
+				event = "festival"
 		CP.Seasons.FALL:
-			pass
+			if randf() < 0.25:
+				event = ["pests", "drought", "rains"].pick_random()
 		CP.Seasons.WINTER:
 			if randf() < 0.20:
 				event = "warm"
-	if event.is_empty() and randf() < 0.9:
+	if event.is_empty() and CP.money > 25 and randf() < 0.9:
 		event = "tax"
 	if not event.is_empty():
 		do_event(event)
@@ -49,12 +51,14 @@ func do_event(new_event:String):
 			title = "MILD WINTER"
 			desc = "This winter is warmer than normal. It doesn't look like the casks will ferment as well."
 		"rain":
-			title = "DROUGHT"
-			desc = "A drought this summer has withered the vines, decreasing the quality of fields this year"
+			title = "EXCELLENT RAINS"
+			desc = "The right amount of rain this summer has improved the quality of the vines this harvest"
 		"festival":
-			pass
+			title = "CHAMPANGE FESTIVAL"
+			desc = "All bottles sold this year are worth more due to the summer festival."
 		"pests":
-			pass
+			title = "PESTS ON CROPS"
+			desc = "Fields that weren't tended this summer have lost value for this harvest."
 	$Panel/EventLabel.text = title
 	$Panel/EventDesc.text = desc
 	$Panel/Button1.text = b_1
@@ -65,19 +69,9 @@ func do_event(new_event:String):
 func _on_button_1_pressed():
 	match event:
 		"tax":
-			CP.money -= 10
 			event_over.emit("tax_coin")
-		"drought":
-			pass
-		"warm":
-			pass
-		"rain":
-			pass
-		"festival":
-			pass
-		"pests":
-			pass
-	event_over.emit(event)
+		_:
+			event_over.emit(event)
 	$Panel.hide()
 
 

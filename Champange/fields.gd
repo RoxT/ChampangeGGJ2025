@@ -7,6 +7,7 @@ const HOUSE := 4
 var tile_focus := Vector2i.ZERO
 signal field_clicked(coord, type)
 signal field_focus(coord, type)
+var worked_at_last_season := []
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -25,11 +26,19 @@ func late_season_ended():
 	var capacity = get_used_cells_by_id(0, atlas(HOUSE)).size() * 3
 	if CP.monk_box.get_child_count() < capacity and CP.season == CP.Seasons.SPRING:
 		CP.monk_box.return_monk_to_box()
+	worked_at_last_season = []
 
 func new_house():
 	var new_coord = get_used_cells_by_id(0, atlas(EMPTY)).pick_random()
 	set_cell(new_coord, 0, atlas(HOUSE))
 	
+func event_quality(change, tended_helps:=false):
+	for plant_coord in CP.plants.keys():
+		if tended_helps and plant_coord in worked_at_last_season:
+			continue
+		else:
+			CP.plants[plant_coord] += change
+
 
 func _unhandled_input(event):
 	var coords = local_to_map(get_local_mouse_position())
@@ -63,3 +72,4 @@ func do_work_at(coord:Vector2i):
 				CP.add_plant(coord)
 			"planted":
 				CP.plants[coord] += 2
+				worked_at_last_season.append(coord)

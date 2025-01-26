@@ -69,3 +69,21 @@ func _on_modal_event_over(result):
 			pass
 		"tax_bottle":
 			pass
+
+func event_results(result):
+
+	match result:
+		"drought":
+			$Fields.event_quality(-5)
+		"warm":
+			pass
+		"rain":
+			$Fields.event_quality(5)
+		"festival":
+			pass
+		"pests":
+			$Fields.event_quality(-5, true)
+		"tax_coin":
+			CP.money -= 20
+		"tax_bottle":
+			pass

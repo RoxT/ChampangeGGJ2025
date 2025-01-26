@@ -180,6 +180,7 @@ metadata/_edit_group_ = true
 
 [node name="Monk" parent="HUD/LeftP/MonkBox" instance=ExtResource("5_qw6dk")]
 layout_mode = 2
+texture = null
 
 [node name="Season" type="Button" parent="HUD/LeftP"]
 layout_mode = 1
@@ -264,10 +265,10 @@ text = "20 gold coins"
 
 [node name="Button2" type="Button" parent="HUD/Modal/Panel"]
 layout_mode = 0
-offset_left = 178.0
+offset_left = 189.0
 offset_top = 184.0
-offset_right = 247.0
-offset_bottom = 201.0
+offset_right = 265.0
+offset_bottom = 215.0
 text = "2 bottles"
 
 [connection signal="changed_monk" from="HUD/LeftP/MonkBox" to="HUD/LeftP" method="_on_monk_box_changed_monk"]
