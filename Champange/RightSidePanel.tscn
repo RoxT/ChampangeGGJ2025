@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://c4i8eaay6tnq8"]
+[gd_scene load_steps=5 format=3 uid="uid://c4i8eaay6tnq8"]
 
 [ext_resource type="Texture2D" uid="uid://g1tm8luxlyd" path="res://RightPanel.png" id="1_4nfj5"]
 [ext_resource type="Script" path="res://info.gd" id="2_g0x2c"]
 [ext_resource type="Script" path="res://right_side_panel.gd" id="2_u3afn"]
+[ext_resource type="AudioStream" uid="uid://beeh6xf56n7ao" path="res://sell sound.ogg" id="4_8sov1"]
 
 [node name="RightP" type="NinePatchRect"]
 offset_left = 351.0
@@ -60,3 +61,7 @@ grow_vertical = 2
 [node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
 layout_mode = 2
 theme_override_constants/separation = 1
+
+[node name="CoinSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_8sov1")
+volume_db = -14.497

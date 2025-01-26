@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://beeh6xf56n7ao"
+path="res://.godot/imported/sell sound.ogg-6fc86082d2310b9fccd18360884f11d1.oggvorbisstr"
+
+[deps]
+
+source_file="res://sell sound.ogg"
+dest_files=["res://.godot/imported/sell sound.ogg-6fc86082d2310b9fccd18360884f11d1.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

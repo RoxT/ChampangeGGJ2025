@@ -6,13 +6,18 @@ const BatchActions := preload("res://batch_actions.tscn")
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	CP.season_ended.connect(_on_season_ended)
+	CP.sold.connect(_on_sold)
 	_on_season_ended()
 
 func add_batch_actions(coord:Vector2i):
 	var new_batch = BatchActions.instantiate()
 	new_batch.quality = CP.plants[coord]
 	vbox.add_child(new_batch)
-	
+
+func _on_sold():
+	if not $CoinSound.playing:
+		$CoinSound.play()
+
 func how_many_bottles()->int:
 	return vbox.get_child_count()
 	

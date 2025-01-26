@@ -33,6 +33,7 @@ func _next_season():
 				has_riddled = true
 			"Sell":
 				CP.money += quality
+				CP.sold.emit()
 				queue_free()
 	quality -= temp_price
 	temp_price = 0

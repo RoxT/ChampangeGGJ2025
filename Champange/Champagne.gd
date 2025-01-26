@@ -7,6 +7,8 @@ signal season_ended
 signal refresh
 @warning_ignore("unused_signal")
 var monk_box
+@warning_ignore("unused_signal")
+signal sold
 
 var money := 0
 enum Seasons {SPRING, SUMMER, FALL, WINTER}
