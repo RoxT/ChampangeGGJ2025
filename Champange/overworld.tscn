@@ -210,7 +210,7 @@ offset_top = 8.0
 offset_right = 112.0
 offset_bottom = 25.0
 toggle_mode = true
-text = "Build Monestary (15)"
+text = "Build Monastery (15)"
 
 [node name="SeasonTimer" type="Timer" parent="HUD/LeftP"]
 one_shot = true

@@ -51,7 +51,7 @@ func do_event(new_event:String):
 	match event:
 		"tax":
 			title = "KING'S TAX"
-			desc = "The king has demanded 2 bottles of champange or 20 gold coins in tax."
+			desc = "The king has demanded 2 bottles of champagne or 20 gold coins in tax."
 			b_1 = "20 gold coins"
 			b_2 = "2 bottles"
 			$Panel/Button1.disabled = CP.money < 20
@@ -66,7 +66,7 @@ func do_event(new_event:String):
 			title = "EXCELLENT RAINS"
 			desc = "The right amount of rain this summer has improved the quality of the vines this harvest"
 		"festival":
-			title = "CHAMPANGE FESTIVAL"
+			title = "CHAMPAGNE FESTIVAL"
 			desc = "All bottles sold this season are worth more due to the summer festival."
 		"pests":
 			title = "PESTS ON CROPS"
