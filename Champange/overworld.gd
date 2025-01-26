@@ -61,3 +61,11 @@ func _on_season_ended():
 func _unhandled_input(event):
 	if event.is_action_pressed("esc"):
 		get_tree().quit()
+
+
+func _on_modal_event_over(result):
+	match result:
+		"tax_coin":
+			pass
+		"tax_bottle":
+			pass
