@@ -23,7 +23,7 @@ func start():
 	money = 17
 	season = 0
 	year = 1
-	up_keep = 18
+	up_keep = 1
 
 func advance_season():
 	if season == Seasons.WINTER:
