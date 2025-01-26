@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://ievrs5nix7qs"
+path="res://.godot/imported/wine music.ogg-49655de2704c9c4bcbecf2cea79e8a62.oggvorbisstr"
+
+[deps]
+
+source_file="res://wine music.ogg"
+dest_files=["res://.godot/imported/wine music.ogg-49655de2704c9c4bcbecf2cea79e8a62.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=87.0
+beat_count=117
+bar_beats=4

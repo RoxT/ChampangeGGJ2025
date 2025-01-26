@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=4 uid="uid://b06h2t1k3tbnx"]
+[gd_scene load_steps=19 format=4 uid="uid://b06h2t1k3tbnx"]
 
 [ext_resource type="Script" path="res://overworld.gd" id="1_1dfiy"]
 [ext_resource type="Script" path="res://fields.gd" id="2_bshk6"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://b0cg4b1of6xtb" path="res://seasons.png" id="9_nl3oc"]
 [ext_resource type="Texture2D" uid="uid://ch1kydxx2rsat" path="res://GoldCoins.png" id="9_uq47a"]
 [ext_resource type="Script" path="res://modal.gd" id="12_xmme5"]
+[ext_resource type="AudioStream" uid="uid://ievrs5nix7qs" path="res://wine music.ogg" id="13_lykff"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_i46tr"]
 resource_name = "Spring"
@@ -273,6 +274,10 @@ offset_top = 184.0
 offset_right = 265.0
 offset_bottom = 215.0
 text = "2 bottles"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_lykff")
+autoplay = true
 
 [connection signal="changed_monk" from="HUD/LeftP/MonkBox" to="HUD/LeftP" method="_on_monk_box_changed_monk"]
 [connection signal="child_entered_tree" from="HUD/LeftP/MonkBox" to="HUD/LeftP/MonkBox" method="_on_child_entered_tree"]
