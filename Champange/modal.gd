@@ -2,6 +2,7 @@ extends Panel
 
 var event := ""
 var bottles := 0
+var tax_amount := 20
 
 signal event_over(result)
 
@@ -34,6 +35,7 @@ func do_late_season():
 				event = "warm"
 	if event.is_empty() and (CP.money > 25 or bottles > 3) and randf() < 0.1:
 		event = "tax"
+		tax_amount = max(20, floori(CP.money * 0.1))
 	if event.is_empty():
 		hide()
 	else:
@@ -51,10 +53,10 @@ func do_event(new_event:String):
 	match event:
 		"tax":
 			title = "KING'S TAX"
-			desc = "The king has demanded 2 bottles of champagne or 20 gold coins in tax."
-			b_1 = "20 gold coins"
+			desc = "The king has demanded 2 bottles of champagne or %s gold coins in tax."  % tax_amount
+			b_1 = "%s gold coins" % tax_amount
 			b_2 = "2 bottles"
-			$Panel/Button1.disabled = CP.money < 20
+			$Panel/Button1.disabled = CP.money < tax_amount
 			$Panel/Button2.disabled = bottles < 2
 		"drought":
 			title = "DROUGHT"

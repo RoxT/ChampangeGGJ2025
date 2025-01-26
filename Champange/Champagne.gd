@@ -20,7 +20,8 @@ func _ready():
 	start()
 
 func start():
-	money = 17
+	#money = 17
+	money = 300
 	season = 0
 	year = 1
 	up_keep = 1

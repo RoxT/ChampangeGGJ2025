@@ -92,7 +92,7 @@ func event_results(result):
 		"pests":
 			$Fields.event_quality(-4, true)
 		"tax_coin":
-			CP.money -= 20
+			CP.money -= $HUD/Modal.tax_amount
 		"tax_bottle":
 			$HUD/RightP.event_result(result)
 	CP.refresh.emit()
