@@ -1,0 +1,137 @@
+[gd_scene load_steps=12 format=3 uid="uid://dw0es8bit1huy"]
+
+[ext_resource type="Texture2D" uid="uid://ywngy12pwblq" path="res://FleurDeLys.png" id="1_slpp6"]
+[ext_resource type="Texture2D" uid="uid://b8tmai8tmu7f6" path="res://BubblingJug-Sheet.png" id="2_wtip6"]
+[ext_resource type="Texture2D" uid="uid://617gqqskdxlb" path="res://MonkDrawing.png" id="3_8igh3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1oh6g"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w6rf4"]
+atlas = ExtResource("2_wtip6")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gfv2y"]
+atlas = ExtResource("2_wtip6")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0tivb"]
+atlas = ExtResource("2_wtip6")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j5hmm"]
+atlas = ExtResource("2_wtip6")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_llqbd"]
+atlas = ExtResource("2_wtip6")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x2f5t"]
+atlas = ExtResource("2_wtip6")
+region = Rect2(640, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7v6c2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w6rf4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gfv2y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0tivb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j5hmm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_llqbd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x2f5t")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="TitleScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.862991, 0.826228, 0.740496, 1)
+
+[node name="TitleBox" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1.0
+offset_bottom = -249.0
+grow_horizontal = 2
+
+[node name="Label" type="Label" parent="TitleBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 34
+text = "Champagne"
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 90.0
+offset_top = 252.0
+offset_right = 548.0
+offset_bottom = 337.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_1oh6g")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 256.0
+offset_top = 280.0
+offset_right = 351.0
+offset_bottom = 315.0
+theme_override_colors/font_hover_color = Color(0.689614, 0.0590744, 0.586114, 1)
+theme_override_colors/font_pressed_color = Color(0, 0.739715, 0, 1)
+theme_override_font_sizes/font_size = 17
+text = "Play!"
+
+[node name="FleurLeft" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 169.0
+offset_top = 263.0
+offset_right = 234.0
+offset_bottom = 325.0
+texture = ExtResource("1_slpp6")
+
+[node name="FleurRight" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 377.0
+offset_top = 262.0
+offset_right = 442.0
+offset_bottom = 324.0
+texture = ExtResource("1_slpp6")
+
+[node name="MonkDrinking" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 313.0
+offset_top = 85.0
+offset_right = 451.0
+offset_bottom = 220.0
+texture = ExtResource("3_8igh3")
+
+[node name="FermentingJar" type="AnimatedSprite2D" parent="."]
+position = Vector2(268, 153)
+sprite_frames = SubResource("SpriteFrames_7v6c2")
+frame_progress = 0.747742
