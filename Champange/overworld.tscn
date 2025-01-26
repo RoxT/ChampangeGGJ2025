@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://b06h2t1k3tbnx"]
+[gd_scene load_steps=18 format=4 uid="uid://b06h2t1k3tbnx"]
 
 [ext_resource type="Script" path="res://overworld.gd" id="1_1dfiy"]
 [ext_resource type="Script" path="res://fields.gd" id="2_bshk6"]
@@ -11,6 +11,7 @@
 [ext_resource type="Script" path="res://left_panel.gd" id="7_eimlm"]
 [ext_resource type="Texture2D" uid="uid://b0cg4b1of6xtb" path="res://seasons.png" id="9_nl3oc"]
 [ext_resource type="Texture2D" uid="uid://ch1kydxx2rsat" path="res://GoldCoins.png" id="9_uq47a"]
+[ext_resource type="Script" path="res://modal.gd" id="12_xmme5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_i46tr"]
 resource_name = "Spring"
@@ -96,6 +97,9 @@ tile_layout = 4
 tile_size = Vector2i(64, 32)
 sources/0 = SubResource("TileSetAtlasSource_f1hwt")
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0e3an"]
+bg_color = Color(0.18, 0.18, 0.18, 0.717647)
+
 [node name="Overworld" type="Node2D"]
 script = ExtResource("1_1dfiy")
 
@@ -176,6 +180,7 @@ metadata/_edit_group_ = true
 
 [node name="Monk" parent="HUD/LeftP/MonkBox" instance=ExtResource("5_qw6dk")]
 layout_mode = 2
+texture = null
 
 [node name="Season" type="Button" parent="HUD/LeftP"]
 layout_mode = 1
@@ -209,21 +214,68 @@ text = "Build Monestary (15)"
 [node name="SeasonTimer" type="Timer" parent="HUD/LeftP"]
 one_shot = true
 
-[node name="HelpPanel" type="Panel" parent="HUD"]
-visible = false
-offset_left = 6.0
-offset_top = 256.0
-offset_right = 343.0
-offset_bottom = 287.0
+[node name="Modal" type="Panel" parent="HUD"]
+self_modulate = Color(1, 1, 1, 0.211765)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("12_xmme5")
 
-[node name="Label" type="Label" parent="HUD/HelpPanel"]
+[node name="Panel" type="Panel" parent="HUD/Modal"]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 9.0
-text = "Click Empty tile to have monk plant for next season."
+offset_left = 15.0
+offset_top = 22.0
+offset_right = 615.0
+offset_bottom = 273.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_0e3an")
+
+[node name="EventLabel" type="Label" parent="HUD/Modal/Panel"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 39.0
+grow_horizontal = 2
+text = "KING'S TAX"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="EventDesc" type="Label" parent="HUD/Modal/Panel"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 43.0
+offset_top = -77.5
+offset_right = -47.0
+offset_bottom = 9.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "The king has demanded 2 bottles of champange or 20 gold coins in tax."
+
+[node name="Button1" type="Button" parent="HUD/Modal/Panel"]
+layout_mode = 0
+offset_left = 63.0
+offset_top = 184.0
+offset_right = 132.0
+offset_bottom = 201.0
+text = "20 gold coins"
+
+[node name="Button2" type="Button" parent="HUD/Modal/Panel"]
+layout_mode = 0
+offset_left = 189.0
+offset_top = 184.0
+offset_right = 265.0
+offset_bottom = 215.0
+text = "2 bottles"
 
 [connection signal="changed_monk" from="HUD/LeftP/MonkBox" to="HUD/LeftP" method="_on_monk_box_changed_monk"]
 [connection signal="child_entered_tree" from="HUD/LeftP/MonkBox" to="HUD/LeftP/MonkBox" method="_on_child_entered_tree"]
 [connection signal="child_exiting_tree" from="HUD/LeftP/MonkBox" to="HUD/LeftP/MonkBox" method="_on_child_exiting_tree"]
 [connection signal="pressed" from="HUD/LeftP/Season" to="HUD/LeftP" method="_on_season_pressed"]
 [connection signal="toggled" from="HUD/LeftP/BuildPanel/BuildBtn" to="HUD/LeftP" method="_on_build_btn_toggled"]
+[connection signal="event_over" from="HUD/Modal" to="." method="_on_modal_event_over"]
+[connection signal="pressed" from="HUD/Modal/Panel/Button1" to="HUD/Modal" method="_on_button_1_pressed"]
+[connection signal="pressed" from="HUD/Modal/Panel/Button2" to="HUD/Modal" method="_on_button_2_pressed"]

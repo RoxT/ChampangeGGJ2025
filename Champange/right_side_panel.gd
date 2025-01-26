@@ -23,3 +23,14 @@ func _on_season_ended():
 	else:
 		$HelpLabel.text = "Tutorial: \n%s" % text
 	
+func event_result(result):
+	match result:
+		"warm":
+			for batch in $VBoxContainer.get_children():
+				if batch.sprite.animation == "cask":
+					batch.quality -= 4
+		"festival":
+			for batch in $VBoxContainer.get_children():
+				#TODO
+				batch.quality += 5
+				

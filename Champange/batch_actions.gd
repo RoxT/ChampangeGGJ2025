@@ -7,6 +7,7 @@ var monk
 
 var quality := 5
 var has_riddled := false
+var temp_price := 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -30,7 +31,7 @@ func _next_season():
 				queue_free()
 	if CP.season == CP.Seasons.SPRING and sprite.animation == "bottled":
 		quality += 2
-		
+	quality -= temp_price
 	setup(sprite.animation)
 					
 
