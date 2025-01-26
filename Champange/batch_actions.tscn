@@ -1,13 +1,14 @@
-[gd_scene load_steps=16 format=3 uid="uid://o6ptoqvbyt34"]
+[gd_scene load_steps=17 format=3 uid="uid://o6ptoqvbyt34"]
 
 [ext_resource type="Script" path="res://batch_actions.gd" id="1_l0hk3"]
 [ext_resource type="Texture2D" uid="uid://buof8b4xcuxbc" path="res://RiddleBottle-Sheet.png" id="2_hd2is"]
 [ext_resource type="Texture2D" uid="uid://3radpiy1ay4" path="res://BubblingCask-Sheet.png" id="3_dv0xh"]
 [ext_resource type="Texture2D" uid="uid://b5en6ktlaf470" path="res://WineLabel.png" id="4_1qnij"]
 [ext_resource type="ButtonGroup" uid="uid://hj7gwkxb20t3" path="res://batch_actions_button_group.tres" id="4_mukwr"]
+[ext_resource type="Texture2D" uid="uid://bxt545btd7poj" path="res://FlatCoin.png" id="6_se3rp"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kavyq"]
-bg_color = Color(0.34902, 0.6, 0.6, 0.294118)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qwhev"]
+bg_color = Color(0.54, 0.46692, 0.2268, 0.168627)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pvx0f"]
 atlas = ExtResource("2_hd2is")
@@ -85,7 +86,7 @@ anchor_right = 1.0
 offset_right = -390.0
 offset_bottom = 37.0
 grow_horizontal = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_kavyq")
+theme_override_styles/panel = SubResource("StyleBoxFlat_qwhev")
 script = ExtResource("1_l0hk3")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -122,9 +123,9 @@ anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -31.0
+offset_left = -56.0
 offset_top = -8.5
-offset_right = -7.0
+offset_right = -32.0
 offset_bottom = 8.5
 grow_horizontal = 0
 grow_vertical = 2
@@ -137,12 +138,27 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_left = 3.0
+offset_left = 1.0
 offset_top = -18.5
-offset_right = 18.0
+offset_right = 15.0
 offset_bottom = 18.5
 grow_vertical = 2
 text = "50"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FlatCoin" type="Sprite2D" parent="."]
+position = Vector2(8, 23)
+texture = ExtResource("6_se3rp")
+
+[node name="YearsLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 218.0
+offset_right = 250.0
+offset_bottom = 37.0
+text = "43
+yrs"
+horizontal_alignment = 1
 vertical_alignment = 1
 
 [connection signal="toggled" from="Button1" to="." method="_on_button_1_toggled"]
