@@ -11,3 +11,5 @@ default_font_size = 8
 full/base_type = &"Button"
 full/colors/font_color = Color(0, 0, 0, 1)
 full/styles/normal = SubResource("StyleBoxFlat_q4ky4")
+upkeep_crisis/base_type = &"Label"
+upkeep_crisis/colors/font_color = Color(0.98, 0.277667, 0.1372, 1)

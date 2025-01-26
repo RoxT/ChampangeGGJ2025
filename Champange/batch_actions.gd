@@ -12,6 +12,7 @@ var temp_price := 0
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	CP.season_ended.connect(_next_season)
+	CP.refresh.connect(refresh)
 	setup("cask")
 
 func _next_season():
@@ -33,7 +34,11 @@ func _next_season():
 		quality += 2
 	quality -= temp_price
 	setup(sprite.animation)
-					
+
+func refresh():
+	if quality < 1: quality = 1
+	$QualityLabel.text = "%s" % quality
+	
 
 func setup(state:String):
 	match state:

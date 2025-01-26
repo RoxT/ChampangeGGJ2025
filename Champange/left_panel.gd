@@ -11,6 +11,8 @@ func _on_refresh():
 	$CoinsLabel.text = "%s coins" % CP.money
 	$BuildPanel/BuildBtn.disabled = CP.money < 15
 	$BuildPanel.visible = CP.year >= 3 and CP.season != CP.Seasons.WINTER
+	$UpkeepLabel.text = "Upkeep: %s coins" % CP.up_keep
+	$UpkeepLabel.theme_type_variation = "upkeep_crisis" if CP.up_keep > CP.money else ""
 
 func get_builder()->bool:
 	if builder:

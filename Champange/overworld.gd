@@ -7,6 +7,7 @@ func _ready():
 	$Fields.field_focus.connect(_on_field_focus)
 	CP.refresh.connect(_on_refresh)
 	CP.season_ended.connect(_on_season_ended)
+	$HUD/Modal.event_over.connect(event_results)
 
 func _on_field_focus(coord, type):
 	assert(coord is Vector2i)
@@ -54,8 +55,12 @@ func _on_season_ended():
 			CP.plants[plant_coord] = 5
 	if $HUD/LeftP.get_builder():
 		$Fields.new_house()
+		CP.up_keep += 1
 		CP.money -= 15
+	$HUD/Modal.bottles = $HUD/RightP.how_many_bottles()
+	
 	CP.refresh.emit()
+
 
 
 func _unhandled_input(event):
@@ -74,16 +79,17 @@ func event_results(result):
 
 	match result:
 		"drought":
-			$Fields.event_quality(-5)
+			$Fields.event_quality(-4)
 		"warm":
-			pass
+			$HUD/RightP.event_result(result)
 		"rain":
-			$Fields.event_quality(5)
+			$Fields.event_quality(4)
 		"festival":
-			pass
+			$HUD/RightP.event_result(result)
 		"pests":
-			$Fields.event_quality(-5, true)
+			$Fields.event_quality(-4, true)
 		"tax_coin":
 			CP.money -= 20
 		"tax_bottle":
-			pass
+			$HUD/RightP.event_result(result)
+	CP.refresh.emit()

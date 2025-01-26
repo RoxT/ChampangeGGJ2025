@@ -8,18 +8,28 @@ signal refresh
 @warning_ignore("unused_signal")
 var monk_box
 
-var money := 17
+var money := 0
 enum Seasons {SPRING, SUMMER, FALL, WINTER}
 var season := 0
-var year := 1
+var year := 0
+var up_keep := 0
 
 var plants := {}
+
+func _ready():
+	start()
+
+func start():
+	money = 17
+	season = 0
+	year = 1
+	up_keep = 18
 
 func advance_season():
 	if season == Seasons.WINTER:
 		year += 1
 	season = (season + 1) % Seasons.size()
-	money -= 1
+	money -= up_keep
 	print("year %s" % year)
 	season_ended.emit()
 

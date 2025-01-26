@@ -1,8 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://dw0es8bit1huy"]
+[gd_scene load_steps=13 format=3 uid="uid://byh1isfpu7ubr"]
 
-[ext_resource type="Texture2D" uid="uid://ywngy12pwblq" path="res://FleurDeLys.png" id="1_slpp6"]
+[ext_resource type="Script" path="res://title_screen.gd" id="1_p5nsl"]
+[ext_resource type="Texture2D" uid="uid://idlea1fm7mqr" path="res://FleurDeLys.png" id="1_slpp6"]
 [ext_resource type="Texture2D" uid="uid://b8tmai8tmu7f6" path="res://BubblingJug-Sheet.png" id="2_wtip6"]
-[ext_resource type="Texture2D" uid="uid://617gqqskdxlb" path="res://MonkDrawing.png" id="3_8igh3"]
+[ext_resource type="Texture2D" uid="uid://db1q4bmhr5dbj" path="res://MonkDrawing.png" id="3_8igh3"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1oh6g"]
 
@@ -63,6 +64,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_p5nsl")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -134,4 +136,7 @@ texture = ExtResource("3_8igh3")
 [node name="FermentingJar" type="AnimatedSprite2D" parent="."]
 position = Vector2(268, 153)
 sprite_frames = SubResource("SpriteFrames_7v6c2")
+autoplay = "default"
 frame_progress = 0.747742
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

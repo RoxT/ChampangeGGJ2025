@@ -98,7 +98,7 @@ tile_size = Vector2i(64, 32)
 sources/0 = SubResource("TileSetAtlasSource_f1hwt")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0e3an"]
-bg_color = Color(0.18, 0.18, 0.18, 0.717647)
+bg_color = Color(0.18, 0.18, 0.18, 0.835294)
 
 [node name="Overworld" type="Node2D"]
 script = ExtResource("1_1dfiy")
@@ -124,26 +124,17 @@ offset_right = 638.0
 offset_bottom = 360.0
 script = ExtResource("7_eimlm")
 
-[node name="Stats" type="RichTextLabel" parent="HUD/LeftP"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 9.0
-grow_horizontal = 2
-grow_vertical = 2
-
 [node name="SeasonIcon" type="Sprite2D" parent="HUD/LeftP"]
-position = Vector2(539, 23)
+position = Vector2(536, 19)
 texture = ExtResource("9_nl3oc")
 hframes = 4
 
 [node name="SeasonLabel" type="Label" parent="HUD/LeftP"]
 layout_mode = 0
-offset_left = 522.0
-offset_top = 41.0
-offset_right = 562.0
-offset_bottom = 62.0
+offset_left = 519.0
+offset_top = 37.0
+offset_right = 559.0
+offset_bottom = 58.0
 text = "Summer
 Year 3"
 horizontal_alignment = 1
@@ -156,12 +147,22 @@ texture = ExtResource("9_uq47a")
 
 [node name="CoinsLabel" type="Label" parent="HUD/LeftP"]
 layout_mode = 0
-offset_left = 64.0
-offset_top = 19.0
-offset_right = 104.0
-offset_bottom = 52.0
+offset_left = 47.0
+offset_top = 18.0
+offset_right = 87.0
+offset_bottom = 30.0
 text = "3 coins"
 autowrap_mode = 1
+
+[node name="UpkeepLabel" type="Label" parent="HUD/LeftP"]
+layout_mode = 0
+offset_left = 103.0
+offset_top = 18.0
+offset_right = 157.0
+offset_bottom = 51.0
+theme_type_variation = &"upkeep_crisis"
+text = "Upkeep: 1 coins"
+autowrap_mode = 2
 
 [node name="MonkBox" type="HBoxContainer" parent="HUD/LeftP"]
 layout_mode = 1
@@ -169,10 +170,10 @@ anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 104.0
-offset_top = -45.0
-offset_right = -125.0
-offset_bottom = -10.0
+offset_left = 157.0
+offset_top = -46.0
+offset_right = -109.0
+offset_bottom = -11.0
 grow_horizontal = 2
 grow_vertical = 0
 script = ExtResource("4_dpi7v")
@@ -188,10 +189,10 @@ anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 573.0
-offset_top = -57.0
-offset_right = -5.0
-offset_bottom = -10.0
+offset_left = 568.0
+offset_top = -61.0
+offset_right = -10.0
+offset_bottom = -27.0
 grow_horizontal = 2
 grow_vertical = 0
 text = "Next Season"
@@ -215,6 +216,7 @@ text = "Build Monestary (15)"
 one_shot = true
 
 [node name="Modal" type="Panel" parent="HUD"]
+visible = false
 self_modulate = Color(1, 1, 1, 0.211765)
 anchors_preset = 15
 anchor_right = 1.0
@@ -227,8 +229,8 @@ script = ExtResource("12_xmme5")
 layout_mode = 0
 offset_left = 15.0
 offset_top = 22.0
-offset_right = 615.0
-offset_bottom = 273.0
+offset_right = 340.0
+offset_bottom = 253.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_0e3an")
 
 [node name="EventLabel" type="Label" parent="HUD/Modal/Panel"]
@@ -247,20 +249,21 @@ anchors_preset = 14
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = 43.0
+offset_left = 38.0
 offset_top = -77.5
-offset_right = -47.0
+offset_right = -60.0
 offset_bottom = 9.5
 grow_horizontal = 2
 grow_vertical = 2
 text = "The king has demanded 2 bottles of champange or 20 gold coins in tax."
+autowrap_mode = 2
 
 [node name="Button1" type="Button" parent="HUD/Modal/Panel"]
 layout_mode = 0
 offset_left = 63.0
 offset_top = 184.0
-offset_right = 132.0
-offset_bottom = 201.0
+offset_right = 148.0
+offset_bottom = 215.0
 text = "20 gold coins"
 
 [node name="Button2" type="Button" parent="HUD/Modal/Panel"]
