@@ -1,7 +1,7 @@
 extends NinePatchRect
 
 const BatchActions := preload("res://batch_actions.tscn")
-@onready var vbox := $VBoxContainer
+@onready var vbox := $ScrollContainer/VBoxContainer
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -14,7 +14,7 @@ func add_batch_actions(coord:Vector2i):
 	vbox.add_child(new_batch)
 	
 func how_many_bottles()->int:
-	return $VBoxContainer.get_child_count()
+	return vbox.get_child_count()
 	
 func _on_season_ended():
 	var key = "%s_YEAR%s" % [CP.Seasons.keys()[CP.season].to_upper(), CP.year]
@@ -28,16 +28,16 @@ func _on_season_ended():
 func event_result(result):
 	match result:
 		"warm":
-			for batch in $VBoxContainer.get_children():
+			for batch in vbox.get_children():
 				if batch.sprite.animation == "cask":
 					batch.quality -= 4
 		"festival":
-			for batch in $VBoxContainer.get_children():
+			for batch in vbox.get_children():
 				batch.temp_price = floori(batch.quality * 0.4)
 				batch.quality += batch.temp_price
 		"tax_bottle":
 			
-			var children = $VBoxContainer.get_children()
+			var children = vbox.get_children()
 			var a = children[0]
 			for c in children:
 				if c.quality < a.quality:

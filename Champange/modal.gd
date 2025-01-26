@@ -45,6 +45,8 @@ func do_event(new_event:String):
 	var desc := ""
 	var b_1 := "Okay"
 	var b_2 := ""
+	$Panel/Button1.disabled = false
+	$Panel/Button2.disabled = false
 	
 	match event:
 		"tax":
@@ -52,6 +54,8 @@ func do_event(new_event:String):
 			desc = "The king has demanded 2 bottles of champange or 20 gold coins in tax."
 			b_1 = "20 gold coins"
 			b_2 = "2 bottles"
+			$Panel/Button1.disabled = CP.money < 20
+			$Panel/Button2.disabled = bottles < 2
 		"drought":
 			title = "DROUGHT"
 			desc = "A drought this last summer has withered the vines, decreasing the quality of fields this year"

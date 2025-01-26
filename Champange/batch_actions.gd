@@ -8,6 +8,7 @@ var monk
 var quality := 5
 var has_riddled := false
 var temp_price := 0
+var years := 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -16,6 +17,9 @@ func _ready():
 	setup("cask")
 
 func _next_season():
+	if CP.season == CP.Seasons.SPRING and sprite.animation == "bottled":
+		quality += 2
+		years += 1
 	if monk is TextureRect:
 		var button:Button = monk.get_parent()
 		var action = button.text
@@ -30,13 +34,13 @@ func _next_season():
 			"Sell":
 				CP.money += quality
 				queue_free()
-	if CP.season == CP.Seasons.SPRING and sprite.animation == "bottled":
-		quality += 2
 	quality -= temp_price
+	temp_price = 0
 	setup(sprite.animation)
 
 func refresh():
 	if quality < 1: quality = 1
+	$YearsLabel.text = "%s\nyrs" % years
 	$QualityLabel.text = "%s" % quality
 	
 
@@ -64,7 +68,7 @@ func setup(state:String):
 			else:
 				button_1.disabled = false
 				button_1.text = "Riddle"
-	$QualityLabel.text = "%s" % quality
+	refresh()
 
 
 func move_monk_to(button:Button):
