@@ -25,6 +25,7 @@ func _on_field_clicked(coord, type):
 			CP.Seasons.SPRING:
 				match type:
 					"planted", "empty":
+						$HUD/LeftP/Season.disabled = false
 						if $HUD/LeftP/MonkBox.get_monk():
 							$FieldMonkLayer.place_monk_at(coord, type)
 			CP.Seasons.SUMMER:

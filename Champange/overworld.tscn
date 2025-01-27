@@ -195,6 +195,7 @@ offset_right = -10.0
 offset_bottom = -11.0
 grow_horizontal = 2
 grow_vertical = 0
+disabled = true
 text = "Next Season"
 autowrap_mode = 3
 
